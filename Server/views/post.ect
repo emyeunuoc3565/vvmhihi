@@ -1,0 +1,149 @@
+<% extend 'layout' %>
+<div ng-controller="postCtr"> 
+	<div class="AD-MY">
+		<% if @ad.count>0: %>
+			<%- @ad.rows[@ad.count - 1].text %>
+			<% @ad.count-- %>
+		<% end %>
+	</div>
+	<div class="row">
+	<div id="main" class="col-md-8">
+		<div class="post-content">
+			<div class="before-post">
+				<div style="margin-bottom: 15px;">
+					<img src="<%= @post.linkImage %>" width="100%">
+					<h1><%= @post.title %></h1>
+					<p><%= @post.description %></p>
+					<button class="btn btn-watch-result btn-lg" ng-click="watchResult()">
+					<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 
+						<span class="watch-result-text">Xem kết quả</span></button>
+				</div>
+			</div>
+			<div class="loading-post" width="50%" style="display:none;background:#3B5998 ">
+				<img src="/Asset/image/load.gif" style="display: block;width: 240px;margin: auto;">
+				<button class="btn btn-watch-result btn-lg">
+					<i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+					Đang xử lý
+				</button>
+			</div>
+			<div class="after-post" style="display:none">
+				<button class="btn btn-watch-result before-share" ng-click="shareFB()">
+					<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 
+						<span class="watch-result-text">chia sẻ lên Facebook </span>
+				</button>
+				<button class="btn btn-watch-result loading-share" style="display:none">
+					<i class="fa fa-spinner fa-pulse fa-2x" aria-hidden="true"></i> 
+					<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 
+					<span class="watch-result-text"> Đang xử lý</span>
+				</button>
+				<canvas id="myCanvas" width="800" height="420" style="width:100%;height:auto;margin:2px">
+					
+				</canvas>
+				<button class="btn btn-watch-result before-share" ng-click="shareFB()">
+					<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 
+						<span class="watch-result-text">chia sẻ lên Facebook </span>
+				</button>
+
+				<button class="btn btn-watch-result loading-share" style="display:none">
+						<i class="fa fa-spinner fa-pulse fa-2x" aria-hidden="true"></i> 
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 
+						<span class="watch-result-text"> Đang xử lý</span>
+				</button>
+			</div>
+			<div class="btn-liked-fb" style="margin:10px 0">
+				<div class="fb-like" data-href="https://www.facebook.com/emthambocphot/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+			</div>
+			<div style="margin:10px 0;" class="AD-MY">
+				<% if @ad.count>0: %>
+					<%- @ad.rows[@ad.count - 1].text %>
+					<% @ad.count-- %>
+				<% end %>
+			</div>
+			<div class="fb-comments" data-width="100%" data-mobile="true" data-href="https://www.facebook.com/emthambocphot/<%= @post.link%>" data-numposts="1"></div>
+		</div>
+		
+		<div class="like-posts">
+			<div class="tag-custom"><a href="#">Có thể bạn sẽ thích</a></div>
+			<div class="row">
+				<% for hot in @hots : %>
+					<div class="col-sm-4 col-xs-6">
+						<a href="/chuithue/<%= hot.link%>">
+							<img class="img-responsive" src="<%= hot.linkImage%>" alt="">
+							<div class="k-title k-title-sm"><p><%= hot.title%></p></div>
+						</a>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div style="margin:10px 0;" class="AD-MY">
+			<% if @ad.count>0: %>
+				<%- @ad.rows[@ad.count - 1].text %>
+				<% @ad.count-- %>
+			<% end %>
+		</div>
+		<div class="new-posts">
+			<div class="tag-custom"><a href="#">Mới nhất</a></div>
+			<div class="row new-posts-main">
+				<% for n in @news.rows  : %>
+					<div class="col-sm-4 col-xs-6">
+						<a href="/chuithue/<%= n.link %>">
+							<img class="img-responsive" src="<%= n.linkImage %> " alt="<%= n.title%>">
+							<div class="k-title k-title-sm"><p><%= n.title%></p></div>
+						</a>
+					</div>
+				<% end %>
+				<div ng-repeat="new in news" class="col-sm-4 col-xs-6">
+					<a href="/chuithue/{{new.link}}">
+						<img class="img-responsive" src="{{new.linkImage}}" alt="{{new.title}}">
+						<div class="k-title k-title-sm"><p>{{new.title}}</p></div>
+					</a>
+				</div>
+			</div>
+			<span id="currentNewPage" style="display: none"><%= @news.currenPage %></span>
+			<div class="AD-MY">
+				<% if @ad.count>0: %>
+					<%- @ad.rows[@ad.count - 1].text %>
+					<% @ad.count-- %>
+				<% end %>
+			</div>
+			<span ng-if="!isLastPage">
+				<button ng-if="loadingIcon" ng-click="loadMore()" class="btn btn-success btn-lg" style="width: 100%;margin-top:15px ">Đang tải thêm  <i class="fa fa-spinner fa-pulse"></i>
+				</button>
+				<button ng-if="!loadingIcon" ng-click="loadMore()" class="btn btn-success btn-lg" style="width: 100%;margin-top:15px ">Nhiều hơn</button>
+			</span>
+		</div>
+	</div>
+	<div id="sidebar" class="col-md-4">
+		<div class="AD-MY">
+			<% if @ad.count>0: %>
+				<%- @ad.rows[@ad.count - 1].text %>
+				<% @ad.count-- %>
+			<% end %>
+		</div>
+		<div class="like-posts">
+			<div class="tag-custom"><a href="#">Có thể bạn sẽ thích</a></div>
+			<div class="row">
+				<% for hot in @hots: %>
+					<div class="col-xs-12">
+						<a href="/chuithue/<%= hot.link%>">
+							<img class="img-responsive" src="<%= hot.linkImage%>" alt="<%= hot.title%>">
+							<div><p><%= hot.title%></p></div>
+						</a>
+					</div>
+				<% end %>
+				<div class="col-xs-12">
+					<div style="margin:10px 0;" class="AD-MY">
+						<% if @ad.count>0: %>
+							<%- @ad.rows[@ad.count - 1].text %>
+							<% @ad.count-- %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		<%- @post.script %>
+	</script>
+</div>

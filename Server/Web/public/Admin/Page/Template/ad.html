@@ -1,0 +1,10 @@
+<button ng-click="createAd()" class="btn btn-success">New Ad</button>
+<div ng-show="flag=='create'">
+	<input ng-model="createTitle" type="text" class="form-control" placeholder="Title">
+	<textarea ng-model="createText" rows="6" class="form-control" placeholder="Text ad"></textarea>
+	<button ng-click="createAd()" class="btn btn-primary">Create new ad</button>
+	<button ng-click="cancel()" class="btn btn-default">Cancel</button>
+</div>
+<div style="margin-top:5px;height: 100%; ">
+	<div ui-grid="gridOptions1" ui-grid-pagination class="grid" ></div>
+</div>

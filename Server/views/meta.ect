@@ -1,0 +1,42 @@
+<% if @seo=='post': %>
+<title><%= @post.title %></title>
+	<meta property="og:url" content="<%= @post.link %>"/>
+	<link rel="canonical" href="<%= @post.link %>"/>
+	<link rel="image_src" href="<%= @post.linkImage %>">
+	<meta property="og:image" content="<%= @post.linkImage %>"/>
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="800"/>
+	<meta property="og:image:height" content="420"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:locale" content="vi_VN"/>
+	<meta property="og:title" content="<%= @post.title %>"/>
+	<meta property="og:description" content="<%= @post.description %>"/>
+	<meta name="title" content="<%= @post.title %>"/>
+	<meta name="description" content="<%= @post.description %>"/>
+	<meta property="og:site_name" content="CHUITHUEAPPS Ứng Dụng Vui Facebook! - CHUITHUEAPPS.NET"/>
+	<meta property="fb:app_id" content=""/>
+	<meta property="article:publisher" content="https://www.facebook.com/781269098648973/"/>
+	<meta property="article:author" content="https://www.facebook.com/781269098648973/"/>
+	<meta name="item-publish-date" content="<%= @post.createdAt %>"/>
+	<meta name="publish-date" content="<%= @post.createdAt %>"/>
+<% end %>
+<% if @seo=='index' : %>
+<title>CHUITHUEAPPS Ứng Dụng Vui Facebook! - CHUITHUEAPPS</title>
+	<meta property="fb:pages" content="294960127517973"/>
+	<meta property="og:image" content="http://hqapps.net/public/images/home.jpg"/>
+	<meta property="og:image:width" content="800"/>
+	<meta property="og:image:height" content="420"/>
+<% end %>
+<link rel="apple-touch-icon" sizes="57x57" href="http://hqapps.net/public/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://hqapps.net/public/images/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://hqapps.net/public/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://hqapps.net/public/images/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://hqapps.net/public/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://hqapps.net/public/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://hqapps.net/public/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://hqapps.net/public/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://hqapps.net/public/images/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="http://hqapps.net/public/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://hqapps.net/public/images/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="http://hqapps.net/public/images/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://hqapps.net/public/images/favicon-16x16.png" sizes="16x16">

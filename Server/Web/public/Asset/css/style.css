@@ -1,0 +1,155 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+h1{
+	margin: 2px;
+	font-size: 18px;
+}
+p{
+	font-size: 14px;
+}
+body{
+	background-color: #e9ebee;
+}
+.portfolio-item {
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 0px;
+    border: 1px solid #e9ebee;
+    border-radius: 2px;
+}
+.portfolio-item img{
+	display: block;
+	width: 100%;
+}
+.padding-7px {
+	padding: 7px;
+}
+.k-title {
+	padding: 0 5px 5px 5px;
+	font-size: 19px;
+    height: 80px;
+    overflow: hidden;
+}
+.k-title-sm{
+	height: 70px
+}
+footer {
+    margin: 50px 0 0 0;
+}
+/*Theme navbar */
+.navbar-header{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.navbar-my-theme{
+    background: #fff;
+    border: none;
+    border-radius: 0px;
+	border-bottom: 1px solid #ccc;
+}
+
+.navbar-avatar{
+	line-height: 50px;
+	float: right;
+}
+.footer-theme {
+	border-top: 1px solid #ccc;
+	padding: 20px 0;
+	background-color: #2a2730;
+}
+.footer-theme *{
+	text-align: center;
+	color: #99979c;
+	text-decoration: none;
+}
+.footer-theme a {
+	text-decoration: none;
+	transition: all 0.3s;
+}
+.footer-theme a:hover {
+	font-size: 20px;
+	font-weight: bold;
+}
+.white-text {
+	color: #fff;
+}
+.AD-MY{
+	width: 100%;
+	text-align: center;
+}
+#main, #sidebar{
+	margin: 10px 0 0 0;
+}
+.post-content {
+	padding: 15px 10px 15px 15px;
+	margin-bottom: 15px;
+	background-color: #fff;
+	text-align: center;
+}
+.btn-watch-result{
+	width: 100%;
+	background: #3B5998;
+	border: 1px solid #3B5998;
+	color: #fff;
+}
+.btn-watch-result:hover{
+	color: #fff;
+}
+.watch-result-text{
+	font-size: 18px;
+}
+.tag-custom{
+	height: 38px;
+	background-color: #fff;
+	border-left: 3px solid #31b0d5;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 0 0 5px;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.new-posts,.like-posts{
+	padding: 15px 10px 15px 15px;
+	margin-bottom: 15px;
+	background-color: #fff;
+}
+#sidebar{
+	display: none;
+}
+@media (min-width: 992px) {
+	#sidebar{
+		display: block;
+	}
+	.before-post h1{
+		font-size: 30px;
+	}
+}
+@keyframes textRun{
+	0%{color:#919191;transform:translate(500px,0);}
+	20%{color:#919191;transform:translate(0,0);}
+	50%{color:#919191;transform:translate(0,0);}
+	80%{color:#919191}
+	100%{color:#fff;transform:translate(-550px,0);}
+}
+.navbar-brand,.navbar-avatar{
+	position: relative;
+	z-index: 9;
+	background-color: #fff;
+}
+.text-run{
+	line-height: 50px;
+    width: 10000%;
+	position: absolute;
+	animation:textRun 10s ease-in-out infinite;
+}
+.btn-watch-result :hover, .btn-watch-result :active{
+	color: #fff;
+}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: #9d9d9d !important;
+    background-color: #fff !important;
+}

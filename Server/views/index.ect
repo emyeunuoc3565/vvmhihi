@@ -1,0 +1,46 @@
+<% extend 'layout' %>
+<script type="text/javascript">
+	(function () {
+		fbsp.loadSdk();
+	})();
+</script>
+<div class="row">
+<div id="main" class="col-md-8">
+	<div class="row new-posts-main">
+		<% for post in @post.rows : %>
+			<div class="col-md-4 col-xs-6 padding-7px">
+				<div class="portfolio-item">
+					<a href="/chuithue/<%= post.link%>">
+						<img class="img-responsive" src="<%= post.linkImage %>" alt="">
+						<h3 class="k-title">
+							<%= post.title %>
+						</h3>
+					</a>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div style="width:100%">
+	<% if @post.currenPage!=1 :%>
+		<a rel="next" href="/page/<%= parseInt( @post.currenPage, 10 ) - 1 %>" style="float: left" class="btn btn-default"><i class="fa fa-arrow-left" aria-hidden="true" ></i> Mới hơn</a>
+	<% end %>
+	<% if @post.currenPage!=@post.lastPage :%>
+		<a rel="prev" href="/page/<%= parseInt( @post.currenPage, 10 ) + 1 %>" style="float: right" class="btn btn-default"> Cũ hơn <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	<% end %>
+	</div>
+</div>
+
+<div id="sidebar" class="col-md-4">
+	<div class="AD-top"></div>
+	
+    <!-- HIỂN THỊ PAGE -->
+    <div class="fb-page" 
+	  data-href="https://www.facebook.com/emthambocphot/" 
+	  data-small-header="false" 
+	  data-adapt-container-width="true" 
+	  data-hide-cover="false"
+	  data-show-facepile="true" 
+	  data-show-posts="false"></div>
+	  <!-- Your like button code -->
+</div>
+</div>

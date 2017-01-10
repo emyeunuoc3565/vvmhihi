@@ -1,0 +1,47 @@
+<style type="text/css">
+	.image-frame {
+		border: 1px solid black;
+		margin: 2px;
+		position: relative;
+	}
+	.group-btn-frame{
+		position: absolute;
+	}
+	.group-btn-frame button {
+		opacity: 0.7;
+	}
+	.group-btn-frame button:hover {
+		opacity: 1;
+	}
+</style>
+<div style="margin-top: 50px">
+	<div class="alert alert-info" style="width: 50%; float: left">
+			 <input type = "file" file-model = "pictureToUpload"/>
+			 <button class="btn btn-success" ng-click = "uploadPicture()">upload picture</button>
+	 </div>
+	 <div style="width: 50%; float: right">
+		<ul uib-pagination total-items="count" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-change="pageChanged()"></ul>
+	 </div>
+	 <div style="clear: both"></div>
+</div>
+ <div>
+ 	<div class="rows">
+ 		<div class="col-sm-3" ng-repeat="item in album">
+ 			<div class="image-frame">
+ 				<div class="group-btn-frame">
+ 					<button ng-click="watchImage(item.path)" data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+ 					<button ng-click="deleteImage(item.id)" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+ 				</div>
+ 				<img class="img-responsive" src="/{{item.path}}">
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+<div style="height:800px"></div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background: #000">
+     	<img style="border:1px dotted #fff; display: block; margin:auto" class="img-responsive" src="/{{imagePathModal}}">
+    </div>
+  </div>
+</div>

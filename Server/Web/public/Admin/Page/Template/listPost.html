@@ -1,0 +1,36 @@
+<style type="text/css">
+	.center{
+		height: inherit;
+		text-align: center;
+	}
+	.center a{
+		margin-bottom: 0 !important;
+		margin-top: 5px;
+		height: 30px !important;
+		border: none !important;
+	}
+</style>
+<div class="row">
+	<div class="col-sm-9">
+		<input type="text" class="form-control" ng-keyup="search()" ng-model="titleSearch" placeholder="Title">
+	</div>
+</div>
+<div style="margin-top:5px;height: 100%; ">
+	<div ui-grid="gridOptions1" ui-grid-pagination class="grid" ></div>
+</div>
+<div class="row" style="margin-top:15px">
+	<div class="col-sm-9">
+		<input type="text" class="form-control" ng-model="runText" placeholder="Run text">
+	</div>
+	<div class="col-sm-3">
+		<button class="btn btn-success" ng-click="saveRuntext()">Save</button>
+	</div>
+</div>
+<!--
+<nav aria-label="...">
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+-->

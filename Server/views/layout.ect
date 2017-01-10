@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="content-language" content="vi"/>
+	<% include 'meta' %>
+	<link href="/Asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/Asset/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/Asset/bower_components/font-awesome/css/font-awesome.min.css">
+	<!-- jQuery -->
+	<script src="/Asset/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/Asset/bower_components/angular/angular.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/allIndex.js"></script>
+</head>
+<body>
+	
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-my-theme" role="navigation">
+			<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header" ng-init="$rootScope.isLogin = false">
+							<a class="navbar-brand" href="/">ChuiThue</a>
+							<span class="text-run"><%- @textRun %></span>
+					</div>
+			</div>
+			<!-- /.container -->
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<% content %>
+			
+	</div>
+
+	<hr>
+
+
+
+	</div>
+	<!-- /.container -->
+	<!-- Footer -->
+	<footer>
+			<div class="footer-theme">
+				<p>Copyright &copy; <span class="white-text">ChuiThue</span> 2017</p>
+				<p>
+					<a href="/term-of-service"><span class="white-text">Terms of Service</span></a> | <a href="/privacy-policy"><span class="white-text">Privacy Poly</span></a>
+				</p>
+			</div>
+	</footer>
+
+</body>
+
+</html>
