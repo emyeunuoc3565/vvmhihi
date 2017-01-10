@@ -2,7 +2,7 @@ module.exports = {
 	urlAdminIndex : '../Server/Web/public/Admin/Page/MasterPage',
 	database:{
 	    database: 'vonvon',
-	    username: 'ducnguyen',
+	    username: 'postgres',
 	    password: 'abc123',
 	    dialect: 'postgres',
 	    host: 'localhost',
